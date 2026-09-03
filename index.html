@@ -12,12 +12,17 @@
 
     <nav>
         <div class="logo">&lt;Mahir/&gt;</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#cp">Competitive Programming</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-controls">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#cp">Competitive Programming</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <header class="hero" id="home">
@@ -44,7 +49,7 @@
                 <img src="image_79c207.png" alt="Mahir Ahnaf smiling">
             </div>
             <div class="about-text">
-                <p>I am a passionate computer science student with a strong drive for problem-solving. My core focus lies in competitive programming, mastering complex algorithms, and building efficient solutions. I have solved 1200+ problems accross all platforms.</p>
+                <p>I am a passionate computer science student with a strong drive for problem-solving. My core focus lies in competitive programming, mastering complex algorithms, and building efficient solutions. I have solved 1200+ problems across all platforms.</p>
 
                 <h3>Relevant Coursework</h3>
                 <div class="skills-grid">
@@ -126,7 +131,7 @@
                         <div class="ach-rank">Rank: 2nd</div>
                     </div>
                     <div class="achievement-item">
-                        <div class="ach-title"> ICPC Asia Dhaka Regional Contest 2025</div>
+                        <div class="ach-title">ICPC Asia Dhaka Regional Contest 2025</div>
                         <div class="ach-rank">Team: IUT_Stalwart</div>
                         <div class="ach-rank">Rank: 54th</div>
                     </div>
@@ -162,13 +167,11 @@
 
     <footer id="contact">
         <h2>Let's Connect</h2>
-        <p>Feel free to reach out for collaborations.</p>
+        <p>Feel free to reach out for collaborations or competitive programming discussions.</p>
         
-        <!-- Added Email Text Link -->
         <a href="mailto:mahirahnaf995@gmail.com" class="email-link">mahirahnaf995@gmail.com</a>
         
         <div class="social-links">
-            <!-- Added Email Icon -->
             <a href="mailto:mahirahnaf995@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://github.com/mahirahnaf" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/mahir-ahnaf-876705311/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -177,5 +180,36 @@
         <p class="copyright">© 2026 Mahir Ahnaf.</p>
     </footer>
 
+    <!-- Theme Toggle Logic -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const body = document.body;
+
+        // Check for saved theme
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+
+        // Toggle theme on click
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
 </body>
 </html>
