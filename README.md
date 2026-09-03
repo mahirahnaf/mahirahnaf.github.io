@@ -2,7 +2,7 @@
 
 Personal portfolio site: competitive programming profiles, contest results, and education.
 
-**Live:** https://mahirahnaf.github.io/
+**Live:** https://mahirahnaf.github.io/Portfoilio/
 
 ## Structure
 
@@ -19,6 +19,3 @@ Static HTML/CSS — no build step. Open `index.html` in a browser to preview loc
 `.github/workflows/deploy-pages.yml` publishes the repository root to GitHub Pages on
 every push to `main`, and can also be run manually from the Actions tab. Pages is
 configured with **Source: GitHub Actions**.
-
-The repository is named `mahirahnaf.github.io` so GitHub serves it as a user site at
-the domain root rather than under a `/<repo>/` path.
