@@ -2,7 +2,7 @@
 
 Personal portfolio site: competitive programming profiles, contest results, and education.
 
-**Live:** https://mahirahnaf.github.io/Portfoilio/
+**Live:** https://mahirahnaf.github.io/
 
 ## Structure
 
